@@ -1,0 +1,12 @@
+<h1>NgFor Directive</h1>
+<div *ngFor ="let color of colors; index as i">
+  <h4>{{i + "."}}{{color}}</h4>
+</div>
+
+<div *ngFor ="let color of colors;first as f; last as l">
+    <h4>{{color}}{{"| Is First Element:" + f}}{{"| Is Last Element:" + l}}</h4>
+</div>
+
+<div *ngFor ="let color of colors;odd as o; even as e">
+    <h4>{{color}}{{"| Is Odd Index:" + o}}{{"| Is Even Index:" + e}}</h4>
+</div>

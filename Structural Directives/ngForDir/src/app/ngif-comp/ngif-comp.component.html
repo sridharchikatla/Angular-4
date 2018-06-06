@@ -1,0 +1,50 @@
+<h1>NgIf Directive</h1>
+<div *ngFor="let color of colors; first as f; last as l">
+  <h4 *ngIf=f>
+    First Element : {{color}}
+  </h4>
+
+  <h4 *ngIf=l>
+    Last Element : {{color}}
+  </h4>
+
+</div>
+
+<h4> Even Indexed Elements: 
+<div *ngFor="let color of colors; even as e">
+    <h4 *ngIf="e; else elseBlock">
+        {{color}}
+    </h4>
+</div>
+
+<h4> Odd Indexed Elements: 
+<div *ngFor="let color of colors; odd as o">
+    <h4 *ngIf="o; else elseBlock">
+        {{color}}
+    </h4>
+</div>
+  
+<h4> IF and Else: 
+<div *ngFor="let color of colors; index as i">
+    <h4 *ngIf="i==0; else elseBlock">
+        Element Index is 0: {{color}}
+    </h4>
+    <ng-template #elseBlock>        
+        <h4>Element Index is above 0 : {{color}}</h4>
+    </ng-template>
+</div>
+
+<div *ngFor="let color of colors; index as i">
+    <h4 *ngIf="i==0; then thenBlock;else elseBlock"></h4>
+    
+    <ng-template #thenBlock>        
+        <h4>Element Index is 0: {{color}}</h4>
+    </ng-template>
+    <ng-template #elseBlock>        
+        <h4>Element Index is above 0 : {{color}}</h4>
+    </ng-template>
+</div>
+
+
+
+
